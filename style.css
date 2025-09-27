@@ -1,0 +1,334 @@
+/* =======================
+   GLOBAL
+======================= */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #0b0b0b;
+  color: #e0e0e0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =======================
+   HERO tropical jungle
+======================= */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background:
+    linear-gradient(rgba(0,40,0,0.65), rgba(0,0,0,0.85)),
+    url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  color: white;
+}
+
+/* =======================
+   NAVBAR
+======================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 90px; /* Logo XXL */
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #d4ffd4;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #1ABC9C;
+}
+
+/* =======================
+   HAMBURGER
+======================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  background: #d4ffd4;
+  height: 3px;
+  width: 28px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* =======================
+   HERO CONTENT
+======================= */
+.hero-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-center h1 {
+  font-size: 3rem;
+  color: #d4ffd4;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.7);
+}
+
+.hero-center p {
+  color: #b8f3b8;
+}
+
+.btn {
+  background: #1ABC9C;
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: #16A085;
+  transform: scale(1.05);
+}
+
+/* =======================
+   SECTIONS
+======================= */
+.section {
+  padding: 3rem 1rem;
+  text-align: center;
+  background: #0f1a0f;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #8AFF8A;
+}
+
+/* =======================
+   SERVICES / TARIFS
+======================= */
+.cards,
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card,
+.price-card {
+  background: #1a2b1a;
+  color: #d4ffd4;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover,
+.price-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.6);
+}
+
+/* =======================
+   RÉSEAUX SOCIAUX
+======================= */
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #d4ffd4;
+  background: #1a2b1a;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.social-btn i {
+  font-size: 1.5rem;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px);
+  background: #16A085;
+}
+
+.snapchat i { color: #FFFC00; }
+.tiktok i { color: #fff; }
+
+/* =======================
+   FOOTER
+======================= */
+footer {
+  background: #0b0b0b;
+  color: #b8f3b8;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    background: rgba(0,30,0,0.95);
+    flex-direction: column;
+    width: 220px;
+    padding: 1rem;
+    border-radius: 12px;
+    display: none;
+    animation: slideDown 0.3s ease forwards;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero-center h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =======================
+   ANIMATIONS
+======================= */
+.fade-in { 
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.price-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: #1a2b1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.price-table th,
+.price-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: #d4ffd4;
+}
+
+.price-table th {
+  background: #0f1a0f;
+  font-weight: 600;
+}
+
+.price-table tr:hover {
+  background: rgba(26,43,26,0.4);
+}
+
+/* Conteneur responsive pour le tableau */
+.pricing {
+  overflow-x: auto; /* permet de scroller horizontalement sur mobile */
+  -webkit-overflow-scrolling: touch;
+  margin: 0 auto;
+}
+
+/* Ajustement des cellules sur petits écrans */
+@media (max-width: 600px) {
+  .price-table th,
+  .price-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  .price-table {
+    min-width: 500px; /* largeur minimum pour éviter que le contenu se casse */
+  }
+}
